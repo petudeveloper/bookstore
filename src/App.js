@@ -1,11 +1,14 @@
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import NaListOfBooksvBar from './components/ListOfBooks';
+import Home from './pages/Home';
+import Categories from './pages/Categories';
 
 const App = () => (
-  <div>
+  <Router>
     <NavBar />
-    <NaListOfBooksvBar />
-  </div>
+    <Route exact path="/" component={Home} />
+    <Route path="/Categories" component={Categories} />
+  </Router>
 );
 
 export default App;
