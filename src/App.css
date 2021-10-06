@@ -22,3 +22,28 @@
     display: flex;
     align-items: center;
 }
+
+h3 {
+    margin: 0;
+}
+
+.bookInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.container-update-btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-list-books {
+    margin: 20px 0;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+}

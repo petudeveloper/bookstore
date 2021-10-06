@@ -13,10 +13,10 @@ const bookGenres = [
   'Suspense and Thrillers',
 ];
 
-const AddBook = () => (
+const AddBookForm = () => (
   <div>
     <h3>Add New Book</h3>
-    <form>
+    <form className="form">
       <input type="text" placeholder="Book Title" />
       <select className="addBookGenre fontStyle9 fontColor4">
         {
@@ -30,4 +30,4 @@ const AddBook = () => (
   </div>
 );
 
-export default AddBook;
+export default AddBookForm;

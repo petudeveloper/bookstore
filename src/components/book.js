@@ -1,18 +1,22 @@
 import { PropTypes } from 'prop-types';
+import UpdateProgres from './UpdateProgress';
 
 const Book = (props) => {
   const { title, genre, author } = props;
 
   return (
-    <div>
-      <span>{ genre }</span>
-      <h3>{ title }</h3>
-      <span>{ author }</span>
+    <div className="bookInfo">
       <div>
-        <span>Comments</span>
-        <span>Remove</span>
-        <span>Edit</span>
+        <span>{ genre }</span>
+        <h3>{ title }</h3>
+        <span>{ author }</span>
+        <div>
+          <span>Comments</span>
+          <span>Remove</span>
+          <span>Edit</span>
+        </div>
       </div>
+      <UpdateProgres />
     </div>
   );
 };

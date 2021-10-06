@@ -1,10 +1,10 @@
 import ListOfBooks from '../components/ListOfBooks';
-import AddBook from '../components/AddBook';
+import AddBookForm from '../components/AddBookForm';
 
 const Home = () => (
   <>
     <ListOfBooks />
-    <AddBook />
+    <AddBookForm />
   </>
 );
 
