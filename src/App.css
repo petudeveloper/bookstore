@@ -1,49 +1,50 @@
 .nav-list {
-    list-style-type: none;
-    display: flex;
-    padding: 1rem;
+  list-style-type: none;
+  display: flex;
+  padding: 1rem;
 }
 
-.nav-list, li {
-    padding: 5px;
+.nav-list,
+li {
+  padding: 5px;
 }
 
 .navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .user-icon {
-    width: 50px;
+  width: 50px;
 }
 
 .container-left-nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .bookInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
 }
 
 .container-update-btn {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .container-list-books {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .form {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
