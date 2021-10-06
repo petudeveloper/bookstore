@@ -1,0 +1,24 @@
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    padding: 1rem;
+}
+
+.nav-list, li {
+    padding: 5px;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-icon {
+    width: 50px;
+}
+
+.container-left-nav {
+    display: flex;
+    align-items: center;
+}
