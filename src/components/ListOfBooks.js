@@ -8,7 +8,7 @@ const ListOfBooks = () => {
     <div className="container-list-books">
       {
         books.map((book) => (
-          <Book key={book.id} title={book.title} genre={book.genre} author={book.author} />
+          <Book key={book.id} title={book.title} id={book.id} />
         ))
       }
     </div>

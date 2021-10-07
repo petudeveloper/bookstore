@@ -2,17 +2,17 @@ import { PropTypes } from 'prop-types';
 import UpdateProgres from './UpdateProgress';
 
 const Book = (props) => {
-  const { title, genre, author } = props;
+  const { title, id } = props;
 
   return (
     <div className="bookInfo">
       <div>
-        <span>{ genre }</span>
+        <span>Fantasy</span>
         <h3>{ title }</h3>
-        <span>{ author }</span>
+        <span>Pepito Perez</span>
         <div>
           <span>Comments</span>
-          <span>Remove</span>
+          <span id={`book${id}`}>Remove</span>
           <span>Edit</span>
         </div>
       </div>
@@ -23,8 +23,7 @@ const Book = (props) => {
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Book;

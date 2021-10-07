@@ -24,34 +24,32 @@ const AddBookForm = () => {
   const createBookAction = bindActionCreators(addBook, dispatch);
 
   const [title, updateTitle] = useState('');
-  const [author, updateAuthor] = useState('');
 
   const setTitle = (e) => updateTitle(e.target.value);
-  const setAuthor = (e) => updateAuthor(e.target.value);
 
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
       id: uuidv4(), // make sure it's unique
       title,
-      author,
     };
 
     // dispatch an action and pass it the newBook object (your action's payload)
-    createBookAction(newBook);
-    updateTitle('');
-    updateAuthor('');
+    if (title) {
+      createBookAction(newBook);
+      updateTitle('');
+    }
   };
 
   return (
     <div>
       <h3>Add New Book</h3>
       <form className="form" onSubmit={submitBookToStore}>
-        <input type="text" placeholder="Book Title" onChange={setTitle} />
-        <select className="addBookGenre fontStyle9 fontColor4" onChange={setAuthor}>
+        <input type="text" placeholder="Book Title" onChange={setTitle} value={title} />
+        <select className="select-genre">
           {
           bookGenres.map((genres) => (
-            <option key="book-id" value={genres}>{genres}</option>
+            <option key={uuidv4()} value={genres}>{genres}</option>
           ))
         }
         </select>
