@@ -1,8 +1,14 @@
 import { PropTypes } from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import UpdateProgres from './UpdateProgress';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
   const { title, id } = props;
+
+  const dispatch = useDispatch();
+  const removeBookAction = bindActionCreators(removeBook, dispatch);
 
   return (
     <div className="bookInfo">
@@ -12,7 +18,7 @@ const Book = (props) => {
         <span>Pepito Perez</span>
         <div>
           <span>Comments</span>
-          <span id={`book${id}`}>Remove</span>
+          <button type="button" id={`book${id}`} onClick={() => removeBookAction(id)}>Remove</button>
           <span>Edit</span>
         </div>
       </div>
