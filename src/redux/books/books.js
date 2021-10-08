@@ -1,40 +1,49 @@
 import { v4 as uuidv4 } from 'uuid';
 
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Zf3WPK19TLPHZbzO75bN/books';
+
 // Actions
-const ADD_BOOK = 'bookStore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const LOAD = 'bookStore/books/LOAD';
 
 const initialState = [];
 
 // Reducer
 export const reducer = (state = initialState, action) => {
-  let newBook;
-  switch (action.type) {
-    case ADD_BOOK:
-      newBook = { ...action.book, id: uuidv4() };
-      return [...state, newBook];
-    case REMOVE_BOOK: {
-      const { id } = action;
-      return state.filter((book) => book.id !== id);
-    }
-    default:
-      return state;
+  if (action.type === LOAD) {
+    return action.state;
   }
+  return state;
 };
 
 // Action Creators
-export function addBook(book) {
-  return {
-    type: ADD_BOOK,
-    book,
-  };
-}
+export const loadBooks = () => async (dispatch) => {
+  const response = await fetch(URL);
+  const state = await response.json();
+  dispatch({ type: LOAD, state });
+};
 
-export function removeBook(id) {
-  return {
-    type: REMOVE_BOOK,
-    id,
-  };
-}
+export const addBook = (book) => async (dispatch) => {
+  await fetch(URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify({
+      item_id: uuidv4(),
+      title: book.title,
+      category: book.category,
+    }),
+  });
+  const response = await fetch(URL);
+  const state = await response.json();
+  dispatch({ type: LOAD, state });
+};
+
+export const removeBook = (id) => async (dispatch) => {
+  await fetch(URL + id, { method: 'DELETE' });
+  const response = await fetch(URL);
+  const state = await response.json();
+  dispatch({ type: LOAD, state });
+};
 
 export default reducer;
