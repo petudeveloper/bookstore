@@ -45,7 +45,7 @@ li {
   align-items: center;
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
-  padding: 1.813rem 6.188rem 1.813rem 6.25rem;
+  padding: 0.9rem 3rem 0.9rem 3rem;
 }
 
 .user-icon {
@@ -75,7 +75,7 @@ li {
   margin: 1rem 0;
   background-color: #fff;
   border-bottom: 1px solid #e8e8e8;
-  padding: 2rem 3rem 1.75rem 1.68rem;
+  padding: 1rem 1.5rem 1rem 1rem;
 }
 
 .container-update-btn {
@@ -147,7 +147,7 @@ h3 {
 }
 
 .edit-btn {
-  padding: 1.313rem 1.063rem;
+  padding: 1rem 1.063rem;
 }
 
 .update-progres {
@@ -165,7 +165,7 @@ h3 {
   font-weight: 300;
   color: #fff;
   font-size: 0.813rem;
-  margin-top: 1.438rem;
+  margin-top: 0.7rem;
 }
 
 .chapter {
@@ -221,4 +221,30 @@ h3 {
   border: solid 1px var(--white);
   background-color: #fff;
   padding-left: 1rem;
+}
+
+.progress-bar-container {
+  display: flex;
+}
+
+.circular-progress-bar {
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
+.progress-completed {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.progress-in-numbers {
+  font-size: 2rem;
+}
+
+.completed-label {
+  opacity: 50%;
+  font-size: 0.875rem;
 }
