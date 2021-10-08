@@ -29,11 +29,13 @@ const AddBookForm = () => {
 
   const submitBookToStore = (e) => {
     e.preventDefault();
-    const newBook = {
-      id: uuidv4(), // make sure it's unique
-      title,
-    };
 
+    const category = e.target.children[1].value;
+
+    const newBook = {
+      title,
+      category,
+    };
     // dispatch an action and pass it the newBook object (your action's payload)
     if (title) {
       createBookAction(newBook);
@@ -42,10 +44,10 @@ const AddBookForm = () => {
   };
 
   return (
-    <div>
-      <h3>Add New Book</h3>
+    <div className="form-container">
+      <h3 className="form-title">Add New Book</h3>
       <form className="form" onSubmit={submitBookToStore}>
-        <input type="text" placeholder="Book Title" onChange={setTitle} value={title} />
+        <input className="Lesson-Panel" type="text" placeholder="Book Title" onChange={setTitle} value={title} />
         <select className="select-genre">
           {
           bookGenres.map((genres) => (
@@ -53,7 +55,7 @@ const AddBookForm = () => {
           ))
         }
         </select>
-        <button type="submit">Add Book</button>
+        <button className="add-btn" type="submit">Add Book</button>
       </form>
     </div>
   );

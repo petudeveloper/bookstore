@@ -1,7 +1,7 @@
 import '../styles/circle.css';
 
 const UpdateProgres = () => (
-  <div>
+  <div className="update-progres">
     <div className="c100 p12 small">
       <span>12%</span>
       <div className="slice">
@@ -10,9 +10,9 @@ const UpdateProgres = () => (
       </div>
     </div>
     <div className="container-update-btn">
-      <span>Current Chapter</span>
-      <span>Chapter 17</span>
-      <button type="button">UPDATE PROGRESS</button>
+      <span className="chapter-title">Current Chapter</span>
+      <span className="chapter">Chapter 17</span>
+      <button className="update-progres-btn" type="button">UPDATE PROGRESS</button>
     </div>
   </div>
 );

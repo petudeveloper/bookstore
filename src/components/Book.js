@@ -5,7 +5,7 @@ import UpdateProgres from './UpdateProgress';
 import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { title, id } = props;
+  const { title, id, genre } = props;
 
   const dispatch = useDispatch();
   const removeBookAction = bindActionCreators(removeBook, dispatch);
@@ -13,13 +13,13 @@ const Book = (props) => {
   return (
     <div className="bookInfo">
       <div>
-        <span>Fantasy</span>
+        <span className="genre-tittle">{genre}</span>
         <h3>{ title }</h3>
-        <span>Pepito Perez</span>
+        <span className="author">petudeveloper</span>
         <div>
-          <span>Comments</span>
-          <button type="button" id={`book${id}`} onClick={() => removeBookAction(id)}>Remove</button>
-          <span>Edit</span>
+          <button className="comment-btn book-btn" type="button">Comments</button>
+          <button className="delete-btn book-btn" type="button" id={`book${id}`} onClick={() => removeBookAction(id)}>Remove</button>
+          <button className="edit-btn book-btn" type="button">Edit</button>
         </div>
       </div>
       <UpdateProgres />
@@ -30,6 +30,7 @@ const Book = (props) => {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
 };
 
 export default Book;
