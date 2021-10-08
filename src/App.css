@@ -222,3 +222,29 @@ h3 {
   background-color: #fff;
   padding-left: 1rem;
 }
+
+.progress-bar-container {
+  display: flex;
+}
+
+.circular-progress-bar {
+  width: 4.25rem;
+  height: 4.25rem;
+}
+
+.progress-completed {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.progress-in-numbers {
+  font-size: 2rem;
+}
+
+.completed-label {
+  opacity: 50%;
+  font-size: 0.875rem;
+}
