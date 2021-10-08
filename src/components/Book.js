@@ -13,13 +13,13 @@ const Book = (props) => {
   return (
     <div className="bookInfo">
       <div>
-        <span>Fantasy</span>
+        <span className="genre-tittle">Fantasy</span>
         <h3>{ title }</h3>
-        <span>Pepito Perez</span>
+        <span className="author">Pepito Perez</span>
         <div>
-          <span>Comments</span>
-          <button type="button" id={`book${id}`} onClick={() => removeBookAction(id)}>Remove</button>
-          <span>Edit</span>
+          <button className="comment-btn book-btn" type="button">Comments</button>
+          <button className="delete-btn book-btn" type="button" id={`book${id}`} onClick={() => removeBookAction(id)}>Remove</button>
+          <button className="edit-btn book-btn" type="button">Edit</button>
         </div>
       </div>
       <UpdateProgres />

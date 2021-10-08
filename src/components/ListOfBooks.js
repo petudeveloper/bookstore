@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import Book from './Book';
+import AddBookForm from './AddBookForm';
 
 const ListOfBooks = () => {
   const books = useSelector((state) => state.books);
@@ -11,6 +12,8 @@ const ListOfBooks = () => {
           <Book key={book.id} title={book.title} id={book.id} />
         ))
       }
+
+      <AddBookForm />
     </div>
   );
 };
