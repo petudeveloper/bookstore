@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Zf3WPK19TLPHZbzO75bN/books';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Zf3WPK19TLPHZbzO75bN/books/';
 
 // Actions
 const LOAD = 'bookStore/books/LOAD';
