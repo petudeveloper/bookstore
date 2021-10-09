@@ -17,8 +17,14 @@ const ListOfBooks = () => {
   }, [dispatch]);
 
   const addProgress = () => {
-    progress.push(0);
+    progress.unshift(0);
     updateProgress(progress);
+  };
+
+  const onclickUpdateProgres = (index) => {
+    const newProgres = [...progress];
+    newProgres[index] += 1;
+    updateProgress(newProgres);
   };
 
   return (
@@ -31,6 +37,8 @@ const ListOfBooks = () => {
             id={id}
             title={books[id][0].title}
             progress={progress[index]}
+            onclickUpdateProgres={onclickUpdateProgres}
+            index={index}
           />
         ))
       }

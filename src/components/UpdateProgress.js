@@ -3,7 +3,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import { PropTypes } from 'prop-types';
 
 const UpdateProgress = (props) => {
-  const { progress } = props;
+  const { progress, onclickUpdateProgres, index } = props;
   return (
     <div className="update-progres">
       <div className="progress-bar-container">
@@ -19,7 +19,7 @@ const UpdateProgress = (props) => {
       <div className="container-update-btn">
         <span className="chapter-title">Current Chapter</span>
         <span className="chapter">Chapter 17</span>
-        <button className="update-progres-btn" type="button">UPDATE PROGRESS</button>
+        <button className="update-progres-btn" type="button" onClick={() => onclickUpdateProgres(index)}>UPDATE PROGRESS</button>
       </div>
     </div>
   );
@@ -27,6 +27,8 @@ const UpdateProgress = (props) => {
 
 UpdateProgress.propTypes = {
   progress: PropTypes.number.isRequired,
+  onclickUpdateProgres: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default UpdateProgress;

@@ -6,7 +6,12 @@ import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
   const {
-    title, id, genre, progress,
+    title,
+    id,
+    genre,
+    progress,
+    onclickUpdateProgres,
+    index,
   } = props;
 
   const dispatch = useDispatch();
@@ -24,7 +29,11 @@ const Book = (props) => {
           <button className="edit-btn book-btn" type="button">Edit</button>
         </div>
       </div>
-      <UpdateProgres progress={progress} />
+      <UpdateProgres
+        progress={progress}
+        onclickUpdateProgres={onclickUpdateProgres}
+        index={index}
+      />
     </div>
   );
 };
@@ -34,6 +43,8 @@ Book.propTypes = {
   id: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,
   progress: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  onclickUpdateProgres: PropTypes.func.isRequired,
 };
 
 export default Book;
