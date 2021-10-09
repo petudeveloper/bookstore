@@ -27,6 +27,12 @@ const ListOfBooks = () => {
     updateProgress(newProgres);
   };
 
+  const removeProgres = (index) => {
+    const newProgres = [...progress];
+    newProgres.splice(index, 1);
+    updateProgress(newProgres);
+  };
+
   return (
     <div className="container-list-books">
       {
@@ -39,6 +45,7 @@ const ListOfBooks = () => {
             progress={progress[index]}
             onclickUpdateProgres={onclickUpdateProgres}
             index={index}
+            removeProgres={removeProgres}
           />
         ))
       }

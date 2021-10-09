@@ -12,6 +12,7 @@ const Book = (props) => {
     progress,
     onclickUpdateProgres,
     index,
+    removeProgres,
   } = props;
 
   const dispatch = useDispatch();
@@ -25,7 +26,18 @@ const Book = (props) => {
         <span className="author">petudeveloper</span>
         <div>
           <button className="comment-btn book-btn" type="button">Comments</button>
-          <button className="delete-btn book-btn" type="button" id={`book${id}`} onClick={() => removeBookAction(id)}>Remove</button>
+          <button
+            className="delete-btn book-btn"
+            type="button"
+            id={`book${id}`}
+            onClick={() => {
+              removeBookAction(id);
+              removeProgres(index);
+            }}
+          >
+            Remove
+
+          </button>
           <button className="edit-btn book-btn" type="button">Edit</button>
         </div>
       </div>
@@ -45,6 +57,7 @@ Book.propTypes = {
   progress: PropTypes.number.isRequired,
   index: PropTypes.number.isRequired,
   onclickUpdateProgres: PropTypes.func.isRequired,
+  removeProgres: PropTypes.func.isRequired,
 };
 
 export default Book;
