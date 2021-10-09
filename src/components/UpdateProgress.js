@@ -1,9 +1,9 @@
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { useState } from 'react';
+import { PropTypes } from 'prop-types';
 
-const UpdateProgress = () => {
-  const [progress] = useState(64);
+const UpdateProgress = (props) => {
+  const { progress } = props;
   return (
     <div className="update-progres">
       <div className="progress-bar-container">
@@ -23,6 +23,10 @@ const UpdateProgress = () => {
       </div>
     </div>
   );
+};
+
+UpdateProgress.propTypes = {
+  progress: PropTypes.number.isRequired,
 };
 
 export default UpdateProgress;

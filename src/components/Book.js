@@ -5,7 +5,9 @@ import UpdateProgres from './UpdateProgress';
 import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { title, id, genre } = props;
+  const {
+    title, id, genre, progress,
+  } = props;
 
   const dispatch = useDispatch();
   const removeBookAction = bindActionCreators(removeBook, dispatch);
@@ -22,7 +24,7 @@ const Book = (props) => {
           <button className="edit-btn book-btn" type="button">Edit</button>
         </div>
       </div>
-      <UpdateProgres />
+      <UpdateProgres progress={progress} />
     </div>
   );
 };
@@ -31,6 +33,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
 };
 
 export default Book;
